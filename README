@@ -1,0 +1,13 @@
+ArduinoCore is an eclipse-project.
+It creates the Arduino core library needed to link Arduino projects within eclipse.
+
+Steps i needed to work with Arduino within eclipse:
+-> Eclipse CDT - version (I use Helios)
+-> Eclipse plugins:
+   -> AVR Plugin for Eclipse (needed to program the Arduino board)
+   -> Target Management Project (optional, needed to use the serial monitor within eclipse)
+   -> RXTX (optional, needed to use the serial monitor within eclipse)
+
+-> To get the RXTX plugin to work, I needed to add a folder called 'lock' in the directory /var/ (I use a MacBook with OS Lion)
+-> If an Arduino eclipse project is imported into a new eclipse workspace, in the project properties under AVR then AVRDude: the Programmer configuration is missing.
+   -> Create a new one. Choose Arduino as Programmer Hardware. Set default port (my port is: /dev/tty.usbmodem621) and default baud rate to 115200.
