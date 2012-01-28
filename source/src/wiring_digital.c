@@ -26,7 +26,11 @@
 
 #define ARDUINO_MAIN
 #include "wiring_private.h"
-#include "pins_arduino.h"
+#if defined(__AVR_ATmega328P__)
+#include "pins_arduino_standard.h"
+#elif defined(__AVR_ATmega2560__)
+#include "pins_arduino_mega.h"
+#endif
 
 void pinMode(uint8_t pin, uint8_t mode)
 {

@@ -209,6 +209,10 @@ long map(long, long, long, long, long);
 
 #endif
 
-#include "pins_arduino.h"
+#if defined(__AVR_ATmega328P__)
+#include "pins_arduino_standard.h"
+#elif defined(__AVR_ATmega2560__)
+#include "pins_arduino_mega.h"
+#endif
 
 #endif

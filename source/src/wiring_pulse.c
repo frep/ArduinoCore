@@ -23,7 +23,11 @@
 */
 
 #include "wiring_private.h"
-#include "pins_arduino.h"
+#if defined(__AVR_ATmega328P__)
+#include "pins_arduino_standard.h"
+#elif defined(__AVR_ATmega2560__)
+#include "pins_arduino_mega.h"
+#endif
 
 /* Measures the length (in microseconds) of a pulse on the pin; state is HIGH
  * or LOW, the type of pulse to measure.  Works on pulses from 2-3 microseconds
